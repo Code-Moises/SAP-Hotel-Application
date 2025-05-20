@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Card',
+                typeNamePlural: 'Cards',
+                title: { type: #STANDARD, value: 'ClientId' } } }
+
+annotate entity ZC_CARDS
+    with 
+{
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'General information',
+      position: 10
+    }
+  ]
+                 
+    @UI: {
+    lineItem:       [ { position: 10, label: 'Client ID' } ],
+    identification: [ { position: 10, label: 'Client ID' } ]
+    }
+    ClientId;
+    
+    @UI: {
+    lineItem:       [ { position: 20, label: 'Card Type' } ],
+    identification: [ { position: 20, label: 'Card Type' } ]
+    }
+    CardType;
+    
+    @UI: {
+    lineItem:       [ { position: 30, label: 'Card Number' } ],
+    identification: [ { position: 30, label: 'Card Number' } ]
+    }
+    CardNumber;
+    
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

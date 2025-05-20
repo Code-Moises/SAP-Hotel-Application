@@ -1,0 +1,122 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Hotel',
+    typeNamePlural: 'Hotels',
+    title: { type: #STANDARD, label: 'Name', value: 'Name' }
+  },
+  presentationVariant: [
+    {
+      sortOrder: [ { by: 'Name', direction: #ASC } ],
+      visualizations: [ { type: #AS_LINEITEM } ]
+    }
+  ]
+}
+
+annotate view ZC_HOTEL with
+{
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #COLLECTION,
+      label: 'General information',
+      position: 10
+    },
+    {
+      id: 'Clients',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Clients',
+      position: 20,
+      targetElement: '_Clients'
+    },
+    {
+      id: 'Reservations',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Reservations',
+      position: 20,
+      targetElement: '_Reservations'
+    },
+    {
+      id: 'Rooms',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Rooms',
+      position: 20,
+      targetElement: '_Rooms'
+    },
+    { 
+                      purpose: #STANDARD,
+                      type: #FIELDGROUP_REFERENCE,
+                      importance: #HIGH,
+                      position: 10,
+                      targetQualifier: 'FGROUP10',
+                      label: 'General Data',
+                      parentId: 'GeneralInfo'
+                  },
+                  
+                {
+                      purpose: #STANDARD,
+                      type: #FIELDGROUP_REFERENCE,
+                      importance: #HIGH,
+                      position: 20,
+                      targetQualifier: 'FGROUP20',
+                      label: 'Address Data',
+                      parentId: 'GeneralInfo'
+                  }  
+  ]
+
+  @UI: {
+    lineItem: [
+      { type: #FOR_ACTION, dataAction: 'copyHotel', label: 'Copy Hotel' }
+    ],
+    identification: [
+      { type: #FOR_ACTION, dataAction: 'deleteAll_Reservations', label: 'Delete Reservations' } 
+    ]
+  }   
+    @UI.hidden: true
+    HotelId;
+
+  @UI: { lineItem: [ { position: 10 } ], selectionField: [ { position: 10 } ] }
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 10 }]
+  Name;
+  
+  @UI: { lineItem: [ { position: 20 } ], selectionField: [ { position: 20 } ] }  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 0 }]
+  Street;
+  
+  @UI: { lineItem: [ { position: 30 } ] }  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 10 }]
+  StreetNumber;
+  
+  @UI: { lineItem: [ { position: 40 } ] }  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 20 }]
+  City;
+  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 20 }]
+  Stars;
+  
+  @UI: { lineItem: [ { position: 50 } ] }  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 30 }]
+  Telephone;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.selectionField: [ { position: 100 } ]
+  _Rooms;
+}

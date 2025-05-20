@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZHOTEL_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Messages</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Name cannot be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>The phone number must start with +34 or +49.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Room Type must be SINGLE, DOUBLE or SUITE.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Status must be OUT OF SER or AVAILABLE.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Reservation Status must be COMPLETED, CANCELLED or CONFIRMED.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Dni/Passport cannot be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>The email format is not correct</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>The end date must be later than the start date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Reservations deleted successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Stars cannot be smaller than 1 or bigger than 5</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>A card number is required for a reservation to be confirmed.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Reservations cannot have guests in Single Rooms</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Reservations cannot have more than 1 guest in a Double Room</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Reservations cannot have more than 3 host in a Suite Room</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>A reservation&apos;s client cannot also be a guest.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Room and reservation must belong to the same hotel.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Client assigned to Guests does not belong to hotel.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Room &amp;1 is out of service</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Client assigned to Reservation does not belong to hotel.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Client &amp;1 is already assigned as a guest in this reservation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Room number &amp;1 already exists in this hotel</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>A Client must be assigned to the reservation &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZHOTEL_MSG</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>RoomId cannot be empty in Reservations</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

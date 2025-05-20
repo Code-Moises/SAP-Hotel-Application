@@ -1,0 +1,8 @@
+@Metadata.layer: #CORE
+annotate entity ZR_DELETE_ENTITY
+    with 
+{
+    @EndUserText.label: 'Which ones you want to delete?'
+    reservation_status;
+    
+}

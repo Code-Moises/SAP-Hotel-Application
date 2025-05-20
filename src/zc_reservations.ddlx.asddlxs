@@ -1,0 +1,169 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Reservation',
+    typeNamePlural: 'Reservations',
+    title: { type: #STANDARD, value: 'ReservationId' }
+  }
+}
+
+annotate entity ZC_RESERVATIONS with {
+
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #COLLECTION,
+      label: 'General information',
+      position: 10
+    },
+    {
+      id: 'Guests',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Guests',
+      position: 20,
+      targetElement: '_Host'
+    },
+    { 
+                      purpose: #STANDARD,
+                      type: #FIELDGROUP_REFERENCE,
+                      importance: #HIGH,
+                      position: 10,
+                      targetQualifier: 'FGROUP10',
+                      label: 'General Data',
+                      parentId: 'GeneralInfo'
+                  },
+                  
+                {
+                      purpose: #STANDARD,
+                      type: #FIELDGROUP_REFERENCE,
+                      importance: #HIGH,
+                      position: 20,
+                      targetQualifier: 'FGROUP20',
+                      label: 'Client Data',
+                      parentId: 'GeneralInfo'
+                  }  
+  ]
+
+  @UI: {
+    lineItem: [
+      { position: 10, importance: #HIGH, label: 'Reservation Id' }
+    ]
+  }
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 0, label: 'Reservation ID' }]
+  ReservationId;
+
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 50, label: 'Room Id'  }]
+    @Consumption.valueHelpDefinition: [{
+      entity: {
+        name: 'ZV_VH_ROOM_IDs',
+        element: 'RoomId'
+      },
+      additionalBinding: [{
+        localElement: 'RoomId',
+        element: 'RoomId'
+      }]
+    }]
+    @UI.textArrangement: #TEXT_ONLY
+  RoomId;
+
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 0, label: 'Client Id' }]
+  @Consumption.valueHelpDefinition: [{
+      entity: {
+        name: 'ZV_VH_CLIENT_IDS',
+        element: 'ClientId'
+      },
+      additionalBinding: [{
+        localElement: 'ClientId',
+        element: 'ClientId'
+      }]
+    }]
+  @UI.textArrangement: #TEXT_ONLY
+  ClientId;
+
+  @UI: {
+    lineItem: [
+      { position: 20, importance: #HIGH, label: 'Start Date' }
+    ]
+  }
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 10, label: 'Start Date' }]
+  StartDate;
+
+  @UI: {
+    lineItem: [
+      { position: 30, importance: #HIGH, label: 'End Date' }
+    ]
+  }
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 20, label: 'End Date' }]
+  EndDate;
+
+  @UI: {
+    lineItem: [
+      { position: 40, importance: #HIGH, label: 'Total Price' }
+    ]
+  }
+  @UI.fieldGroup: [{ qualifier: 'FGROUP10',position: 30, label: 'Total Price' }]
+  TotalPrice;
+
+  @UI: {
+    lineItem: [
+      { position: 50, importance: #HIGH },
+      { type: #FOR_ACTION, dataAction: 'acceptReservation', label: 'Accept' },
+      { type: #FOR_ACTION, dataAction: 'rejectReservation', label: 'Reject' }
+    ],
+    identification: [
+      { position: 50 },
+      { type: #FOR_ACTION, dataAction: 'acceptReservation', label: 'Accept' },
+      { type: #FOR_ACTION, dataAction: 'rejectReservation', label: 'Reject' },
+      { type: #FOR_ACTION, dataAction: 'deductDiscount', label: 'Deduct Discount' } 
+    ]
+  }
+  @UI.fieldGroup:  [{ qualifier: 'FGROUP10',position: 40 }] 
+  ReservationStatus;
+  
+  
+  @UI.hidden: true
+  RoomNumber;
+  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 1 }]
+  Name;
+  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 10, label: 'Email'  }]
+  Email;
+  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 20, label: 'Dni/Passport'  }]
+  DniPass;
+  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 30, label: 'Telephone'  }]
+  Telephone;
+  
+  @UI.fieldGroup: [{ qualifier: 'FGROUP20',position: 60, label: 'Card Number'  }]
+    @Consumption.valueHelpDefinition: [{
+      entity: {
+        name: 'ZV_VH_CLIENT_CARDS',
+        element: 'CardNumber'
+      },
+      additionalBinding: [{
+        localElement: 'ClientId',
+        element: 'ClientId'
+      }]
+    }]
+  CardNumber;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

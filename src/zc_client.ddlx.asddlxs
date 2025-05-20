@@ -1,0 +1,76 @@
+ @Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Client',
+    typeNamePlural: 'Clients',
+    title: { type: #STANDARD, value: 'Name' },
+    description: { type: #STANDARD, value: 'ClientId' }
+  }
+}
+annotate entity ZC_CLIENT with {
+
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'General Information',
+      position: 10
+    },
+    {
+      id: 'Cards',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Cards',
+      position: 20,
+      targetElement: '_Cards'
+    }
+  ]
+
+  @UI: {
+    identification: [ { position: 10, label: 'Client ID' } ],
+    selectionField: [ { position: 10 } ]
+  }
+  ClientId;
+
+  @UI: {
+    lineItem:       [ { position: 20 } ],
+    identification: [ { position: 20 } ],
+    selectionField: [ { position: 20 } ]
+  }
+  Name;
+
+  @UI: {
+    lineItem:       [ { position: 30, label: 'Email' } ],
+    identification: [ { position: 30, label: 'Email' } ],
+    selectionField: [ { position: 30 } ]
+  }
+  Email;
+
+  @UI: {
+    lineItem:       [ { position: 40 } ],
+    identification: [ { position: 40 } ]
+  }
+  Telephone;
+
+  @UI: {
+    lineItem:       [ { position: 50, label: 'Dni/Passport'  } ],
+    identification: [ { position: 50, label: 'Dni/Passport' } ]
+  }
+  DniPass;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

@@ -1,0 +1,77 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Guest',
+                typeNamePlural: 'Guests',
+                title: { type: #STANDARD, value: 'ClientId' } } }
+
+annotate entity ZC_HOSTS
+    with 
+{
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'General information',
+      position: 10
+    }
+  ]
+
+    @UI.hidden: true
+    HostId;
+                     
+      @Consumption.valueHelpDefinition: [{
+      entity: {
+        name: 'ZV_VH_CLIENT_IDS',
+        element: 'ClientId'
+      },
+      additionalBinding: [{
+        localElement: 'ClientId',
+        element: 'ClientId'
+      }]
+    }]
+    ClientId;
+    
+    @UI.hidden: true
+    ReservationId;
+    
+    @UI: {
+    lineItem:       [ { position: 20, label: 'Name' } ],
+    identification: [ { position: 20, label: 'Name' } ]
+    }
+    Name;
+    
+    @UI: {
+    lineItem:       [ { position: 30, label: 'Email' } ],
+    identification: [ { position: 30, label: 'Email' } ]
+    }
+    Email;
+    
+    @UI: {
+    lineItem:       [ { position: 40, label: 'DNI/Passport' } ],
+    identification: [ { position: 40, label: 'DNI/Passport' } ]
+    }
+    DniPass;
+
+    @UI: {
+    lineItem:       [ { position: 50, label: 'Telephone' } ],
+    identification: [ { position: 50, label: 'Telephone' } ]
+    }
+    Telephone;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

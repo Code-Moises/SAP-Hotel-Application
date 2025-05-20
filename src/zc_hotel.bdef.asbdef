@@ -1,0 +1,78 @@
+projection implementation in class zbp_c_hotel unique;
+strict ( 2 );
+use draft;
+use side effects;
+
+define behavior for ZC_HOTEL alias Hotel
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Prepare;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+
+  use action deleteAll_Reservations;
+  use action copyHotel;
+
+  use association _Clients { create; with draft; }
+  use association _Reservations { create; with draft; }
+  use association _Rooms { create; with draft; }
+}
+
+define behavior for ZC_CLIENT alias Client
+{
+  use update;
+  use delete;
+
+  use association _Hotel { with draft; }
+  use association _Cards { create; with draft; }
+}
+
+define behavior for ZC_RESERVATIONS alias Reservation
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Hotel { with draft; }
+  use association _Host { create; with draft; }
+
+  use action acceptReservation;
+  use action rejectReservation;
+  use action deductDiscount;
+}
+
+define behavior for ZC_ROOM alias Rooms
+{
+  use update;
+  use delete;
+
+  use association _Hotel { with draft; }
+
+  use action available;
+  use action outOfService;
+}
+
+//It is actually Guests not hosts
+define behavior for ZC_HOSTS alias Host
+{
+  use update;
+  use delete;
+
+  use association _Reservation { with draft; }
+  use association _Hotel { with draft; }
+}
+
+define behavior for ZC_CARDS alias Cards
+{
+  use update;
+  use delete;
+
+  use association _Client { with draft; }
+  use association _Hotel { with draft; }
+}

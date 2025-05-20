@@ -1,0 +1,74 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Room',
+                typeNamePlural: 'Rooms',
+                imageUrl: 'Attachment',
+                title: { type: #STANDARD, value: 'RoomNumber' } } }
+
+annotate entity ZC_ROOM
+    with 
+{
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'General information',
+      position: 10
+    }
+  ]
+                 
+    @UI.hidden: true
+    RoomId;
+    
+    @UI.hidden: true
+    HotelId;
+    
+  @UI: { lineItem: [ { position: 20 } ], identification: [ { position: 20 } ], selectionField: [ { position: 10 } ] }
+  RoomType;
+
+  @UI: { lineItem: [ { position: 30 } ], identification: [ { position: 30, label: 'Number' } ], selectionField: [ { position: 20 } ] }
+  RoomNumber;
+
+  @UI: { lineItem: [ { position: 40, label: 'Base Price' } ], identification: [ { position: 40, label: 'Base Price' } ] }
+  BasePrice;
+
+  @UI: {
+    lineItem: [
+      { position: 50, importance: #HIGH },
+      { type: #FOR_ACTION, dataAction: 'available', label: 'Activate' },
+      { type: #FOR_ACTION, dataAction: 'outOfService', label: 'Deactivate' }
+    ],
+    identification: [
+      { position: 50 },
+      { type: #FOR_ACTION, dataAction: 'available', label: 'Activate' },
+      { type: #FOR_ACTION, dataAction: 'outOfService', label: 'Deactivate' }
+    ]
+  }
+  Status;
+  
+  @UI.identification: [ { position: 110 } ]
+  Attachment;
+
+  @UI.hidden: true
+  MimeType;
+
+  @UI.hidden: true
+  FileName;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

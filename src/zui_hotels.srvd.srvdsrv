@@ -1,0 +1,9 @@
+@EndUserText.label: 'ZUI Hotels, rooms, reserv and clients'
+define service ZUI_HOTELS {
+  expose ZC_HOTEL        as Hotels;
+  expose ZC_ROOM         as Rooms;
+  expose ZC_RESERVATIONS as Reservations;
+  expose ZC_CLIENT       as Clients;
+  expose ZC_HOSTS        as Host;
+  expose ZC_CARDS        as Cards;
+}
