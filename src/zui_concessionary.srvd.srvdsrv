@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZUI Concessionaries and Cars'
+define service ZUI_CONCESSIONARY {
+  expose ZC_CONCESSIONARY as Concessionaries;
+  expose ZC_CARS          as Cars;
+}
